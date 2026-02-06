@@ -1,0 +1,41 @@
+using HRIS.Application.Common.Interfaces;
+using HRIS.Application.Features.FaceRecognition.Commands;
+using HRIS.Application.Features.TimeEntries.Commands;
+using HRIS.Application.Features.TimeEntries.Queries;
+using HRIS.Domain.Enums;
+using HRIS.Infrastructure.Persistence;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
+namespace HRIS_API.Controllers
+{
+    [ApiController]
+    [Route("api/time-entries")]
+    public class TimeEntriesController : ControllerBase
+    {
+        private readonly IMediator _mediator;
+
+        public TimeEntriesController(IMediator mediator)
+            => _mediator = mediator;
+
+        [HttpPost("clock-in")]
+        public async Task<IActionResult> ClockIn(string userName)
+            => Ok(await _mediator.Send(new ClockInCommand(userName)));
+
+        [HttpPost("start-break")]
+        public async Task<IActionResult> StartBreak(string userName, BreakType type)
+            => Ok(await _mediator.Send(new StartBreakCommand(userName, type)));
+
+        [HttpPost("end-break")]
+        public async Task<IActionResult> EndBreak(string userName, BreakType type)
+            => Ok(await _mediator.Send(new EndBreakCommand(userName, type)));
+
+        [HttpPost("clock-out")]
+        public async Task<IActionResult> ClockOut(string userName)
+            => Ok(await _mediator.Send(new ClockOutCommand(userName)));
+
+        [HttpGet("{userName}")]
+        public async Task<IActionResult> GetLogs(string userName)
+            => Ok(await _mediator.Send(new GetUserTimeEntriesQuery(userName)));
+    }
+}

@@ -1,0 +1,100 @@
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    /*z-index: 1;*/
+}
+
+.dashboard-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.dashboard-subtitle {
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+}
+
+/* Tile */
+.app-tile {
+    position: relative;
+    background: linear-gradient(135deg, #1b2a3a, #243b55);
+    border-radius: 16px;
+    padding: 26px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+    .app-tile i {
+        font-size: 34px;
+        margin-bottom: 14px;
+        display: block;
+    }
+
+    .app-tile h4 {
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .app-tile p {
+        font-size: 0.9rem;
+        opacity: 0.85;
+    }
+
+    .app-tile:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+    }
+
+    .app-tile::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 6px;
+        border-radius: 16px 0 0 16px;
+        background: #ff4d4d;
+        opacity: 0.8;
+    }
+
+    .app-tile.hris::before {
+        background: #0dcaf0;
+    }
+
+    .app-tile.client::before {
+        background: #20c997;
+    }
+
+    .app-tile.erp::before {
+        background: #ffc107;
+    }
+
+    .app-tile.crm::before {
+        background: #0d6efd;
+    }
+
+    .app-tile.admin::before {
+        background: #dc3545;
+    }
+
+    .app-tile.support::before {
+        background: #7dd3fc;
+    }
+    .app-tile.amc {
+        background-color: #6f42c1; /* Purple shade */
+        color: white;
+    }
+
+        .app-tile.amc i {
+            font-size: 2rem;
+        }

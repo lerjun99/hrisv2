@@ -1,0 +1,9 @@
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.csproj.AssemblyReference.cache
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.AssemblyInfoInputs.cache
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.AssemblyInfo.cs
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.csproj.CoreCompileInputs.cache
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.RazorAssemblyInfo.cache
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.RazorAssemblyInfo.cs
+C:\DEVELOPMENT\hris_v2\HRIS.UI\obj\Debug\net7.0\HRIS.UI.sourcelink.json

@@ -1,0 +1,30 @@
+﻿@import "login.css";
+@import "app.css";
+@import "loginlayout.css";
+@import "applicant.css";
+@import "ticket-chat.css";
+@import "otp.css";
+@import "dashboard.css";
+@import "contract.css";
+@import "chat.css";
+/* Global safety net */
+html, body {
+    background: #07121a;
+}
+
+/* Wrapper fills viewport */
+.login-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: #07121a;
+}
+.login-right {
+    flex: 1;
+    position: relative;
+    background: radial-gradient(circle at top left, rgba(63,169,245,0.15), transparent 40%), radial-gradient(circle at bottom right, rgba(155,92,255,0.15), transparent 45%), linear-gradient(135deg, #07121a, #0c1f2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}

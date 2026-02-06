@@ -1,0 +1,859 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\layout\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\layout\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\pages\\authlogin\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\pages\\authlogin\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\common\\userstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\common\\userstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\pages\\facelogin\\facelogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\pages\\facelogin\\facelogin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\pages\\authlogin\\redirecttologin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\pages\\authlogin\\redirecttologin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\authlogin\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\authlogin\\dtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\authlogin\\dtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\authlogin\\dtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\authlogin\\dtos\\logininfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\authlogin\\dtos\\logininfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\hris_v2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\hris_v2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\common\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\common\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\services\\linkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\services\\linkservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\opencvfacerecognitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\opencvfacerecognitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_api\\controllers\\facerecognitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|solutionrelative:hris_api\\controllers\\facerecognitioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\facerecognition\\handlers\\identifyfacehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\facerecognition\\handlers\\identifyfacehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\facerecognition\\handlers\\registerfacehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\facerecognition\\handlers\\registerfacehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\facerecognition\\commands\\registerfacecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\facerecognition\\commands\\registerfacecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|solutionrelative:hris_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\persistence\\hrisdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\persistence\\hrisdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\common\\mappings\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\common\\mappings\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|solutionrelative:hris_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\persistence\\hrisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\persistence\\hrisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\jwtauthenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\jwtauthenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\features\\facerecognition\\commands\\identifyfacecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\features\\facerecognition\\commands\\identifyfacecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\common\\interfaces\\ifacerecognitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\common\\interfaces\\ifacerecognitionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\wwwroot\\js\\facecamera.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\wwwroot\\js\\facecamera.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\hris.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\hris.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_api\\hris_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F90716CF-641B-15D4-E643-B95EDF8B3929}|HRIS_API\\HRIS_API.csproj|solutionrelative:hris_api\\hris_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris_v2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{56BF70C2-FEA4-F493-EC11-21FF6D8DCBD4}|HRIS_V2\\HRIS_V2.csproj|solutionrelative:hris_v2\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\migrations\\hrisdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\migrations\\hrisdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\migrations\\20260107193938_newdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\migrations\\20260107193938_newdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\hris.infrastructure.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\hris.infrastructure.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\basicauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\basicauthenticationhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\common\\interfaces\\ihrisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\common\\interfaces\\ihrisdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\basicauthenticationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\basicauthenticationoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.infrastructure\\services\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FAD1E1B1-C0E2-30E9-55B4-0F49949A39B1}|HRIS.Infrastructure\\HRIS.Infrastructure.csproj|solutionrelative:hris.infrastructure\\services\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\common\\interfaces\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\common\\interfaces\\ijwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|c:\\users\\lerju\\source\\repos\\hris_v2\\hris.application\\common\\interfaces\\icryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06269FB4-5DD6-D006-6635-1D6BF0DF7D0A}|HRIS.Application\\HRIS.Application.csproj|solutionrelative:hris.application\\common\\interfaces\\icryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LinkService.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Services\\LinkService.cs",
+              "RelativeDocumentMoniker": "HRIS_V2\\Services\\LinkService.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Services\\LinkService.cs",
+              "RelativeToolTip": "HRIS_V2\\Services\\LinkService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:31:58.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\AuthLogIn\\Login.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Pages\\AuthLogIn\\Login.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\AuthLogIn\\Login.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Pages\\AuthLogIn\\Login.razor",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAUwB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-08T02:26:01.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginLayout.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\LoginLayout.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Layout\\LoginLayout.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\LoginLayout.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Layout\\LoginLayout.razor",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-08T02:24:41.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-08T02:18:26.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OpenCvFaceRecognitionService.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\OpenCvFaceRecognitionService.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\OpenCvFaceRecognitionService.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\OpenCvFaceRecognitionService.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\OpenCvFaceRecognitionService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAewB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:07:25.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IFaceRecognitionService.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IFaceRecognitionService.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Common\\Interfaces\\IFaceRecognitionService.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IFaceRecognitionService.cs",
+              "RelativeToolTip": "HRIS.Application\\Common\\Interfaces\\IFaceRecognitionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:03:22.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\_Imports.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\_Imports.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-07T20:31:28.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\App.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\App.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\App.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-07T20:02:50.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Routes.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Routes.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-07T16:29:34.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FaceLogin.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\FaceLogIn\\FaceLogin.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Pages\\FaceLogIn\\FaceLogin.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\FaceLogIn\\FaceLogin.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Pages\\FaceLogIn\\FaceLogin.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-07T16:30:28.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\appsettings.json",
+              "RelativeDocumentMoniker": "HRIS_V2\\appsettings.json",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\appsettings.json",
+              "RelativeToolTip": "HRIS_V2\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-07T16:29:36.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Program.cs",
+              "RelativeDocumentMoniker": "HRIS_V2\\Program.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Program.cs",
+              "RelativeToolTip": "HRIS_V2\\Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T20:02:06.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RedirectToLogin.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\AuthLogIn\\RedirectToLogin.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Pages\\AuthLogIn\\RedirectToLogin.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Pages\\AuthLogIn\\RedirectToLogin.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Pages\\AuthLogIn\\RedirectToLogin.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-08T02:49:08.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserState.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Common\\UserState.cs",
+              "RelativeDocumentMoniker": "HRIS_V2\\Common\\UserState.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Common\\UserState.cs",
+              "RelativeToolTip": "HRIS_V2\\Common\\UserState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:43:08.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "HRIS_V2\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "HRIS_V2\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-08T02:49:05.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Common\\AppConfig.cs",
+              "RelativeDocumentMoniker": "HRIS_V2\\Common\\AppConfig.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Common\\AppConfig.cs",
+              "RelativeToolTip": "HRIS_V2\\Common\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:34:02.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\AuthResponseDto.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\AuthResponseDto.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\AuthResponseDto.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\AuthResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:40:17.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginResponseDto.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginResponseDto.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginResponseDto.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:41:21.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoginInfoDto.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginInfoDto.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginInfoDto.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginInfoDto.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\AuthLogIn\\DTOs\\LoginInfoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T02:41:32.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\Program.cs",
+              "RelativeDocumentMoniker": "HRIS_API\\Program.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\Program.cs",
+              "RelativeToolTip": "HRIS_API\\Program.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:31:54.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "HrisDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Persistence\\HrisDbContextFactory.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Persistence\\HrisDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Persistence\\HrisDbContextFactory.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Persistence\\HrisDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:15:26.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HRIS_V2.csproj",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\HRIS_V2.csproj",
+              "RelativeDocumentMoniker": "HRIS_V2\\HRIS_V2.csproj",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\HRIS_V2.csproj",
+              "RelativeToolTip": "HRIS_V2\\HRIS_V2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-07T19:00:18.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FaceRecognitionController.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\Controllers\\FaceRecognitionController.cs",
+              "RelativeDocumentMoniker": "HRIS_API\\Controllers\\FaceRecognitionController.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\Controllers\\FaceRecognitionController.cs",
+              "RelativeToolTip": "HRIS_API\\Controllers\\FaceRecognitionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:35:06.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IdentifyFaceHandler.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Handlers\\IdentifyFaceHandler.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\FaceRecognition\\Handlers\\IdentifyFaceHandler.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Handlers\\IdentifyFaceHandler.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\FaceRecognition\\Handlers\\IdentifyFaceHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:06:41.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\DependencyInjection.cs",
+              "RelativeToolTip": "HRIS.Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:02:15.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "JwtAuthenticationManager.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\JwtAuthenticationManager.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\JwtAuthenticationManager.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\JwtAuthenticationManager.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\JwtAuthenticationManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:46:19.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IdentifyFaceCommand.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Commands\\IdentifyFaceCommand.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\FaceRecognition\\Commands\\IdentifyFaceCommand.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Commands\\IdentifyFaceCommand.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\FaceRecognition\\Commands\\IdentifyFaceCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:06:32.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RegisterFaceCommand.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Commands\\RegisterFaceCommand.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\FaceRecognition\\Commands\\RegisterFaceCommand.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Commands\\RegisterFaceCommand.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\FaceRecognition\\Commands\\RegisterFaceCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:04:37.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RegisterFaceHandler.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Handlers\\RegisterFaceHandler.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Features\\FaceRecognition\\Handlers\\RegisterFaceHandler.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Features\\FaceRecognition\\Handlers\\RegisterFaceHandler.cs",
+              "RelativeToolTip": "HRIS.Application\\Features\\FaceRecognition\\Handlers\\RegisterFaceHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:04:50.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:02:26.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HrisDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Persistence\\HrisDbContext.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Persistence\\HrisDbContext.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Persistence\\HrisDbContext.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Persistence\\HrisDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:15:08.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ValidationBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Mappings\\ValidationBehavior.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Common\\Mappings\\ValidationBehavior.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Mappings\\ValidationBehavior.cs",
+              "RelativeToolTip": "HRIS.Application\\Common\\Mappings\\ValidationBehavior.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T21:32:11.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\appsettings.json",
+              "RelativeDocumentMoniker": "HRIS_API\\appsettings.json",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\appsettings.json",
+              "RelativeToolTip": "HRIS_API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-07T21:29:11.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "faceCamera.js",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\wwwroot\\js\\faceCamera.js",
+              "RelativeDocumentMoniker": "HRIS_V2\\wwwroot\\js\\faceCamera.js",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\wwwroot\\js\\faceCamera.js",
+              "RelativeToolTip": "HRIS_V2\\wwwroot\\js\\faceCamera.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-07T20:01:14.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "HRIS_V2\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\wwwroot\\app.css",
+              "RelativeToolTip": "HRIS_V2\\wwwroot\\app.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-01-07T20:09:40.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20260107193938_NewDb.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Migrations\\20260107193938_NewDb.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Migrations\\20260107193938_NewDb.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Migrations\\20260107193938_NewDb.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Migrations\\20260107193938_NewDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T19:39:38.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "HRIS_API.csproj",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\HRIS_API.csproj",
+              "RelativeDocumentMoniker": "HRIS_API\\HRIS_API.csproj",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_API\\HRIS_API.csproj",
+              "RelativeToolTip": "HRIS_API\\HRIS_API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-07T18:08:39.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "BasicAuthenticationHandler.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\BasicAuthenticationHandler.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\BasicAuthenticationHandler.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\BasicAuthenticationHandler.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\BasicAuthenticationHandler.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwCcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:48:31.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "HRIS.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "RelativeToolTip": "HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAqwCQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-07T19:39:47.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "HRIS.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "RelativeToolTip": "HRIS.Infrastructure\\HRIS.Infrastructure.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-07T19:01:30.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "HRIS_V2\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS_V2\\Properties\\launchSettings.json",
+              "RelativeToolTip": "HRIS_V2\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-07T20:04:50.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FileUploadOperationFilter.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\FileUploadOperationFilter.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\FileUploadOperationFilter.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\FileUploadOperationFilter.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\FileUploadOperationFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:48:05.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "HrisDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Migrations\\HrisDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Migrations\\HrisDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Migrations\\HrisDbContextModelSnapshot.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Migrations\\HrisDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T19:43:49.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "IHrisDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IHrisDbContext.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Common\\Interfaces\\IHrisDbContext.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IHrisDbContext.cs",
+              "RelativeToolTip": "HRIS.Application\\Common\\Interfaces\\IHrisDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:16:04.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "BasicAuthenticationOptions.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\BasicAuthenticationOptions.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\BasicAuthenticationOptions.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\BasicAuthenticationOptions.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\BasicAuthenticationOptions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:48:48.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Cryptography.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\Cryptography.cs",
+              "RelativeDocumentMoniker": "HRIS.Infrastructure\\Services\\Cryptography.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Infrastructure\\Services\\Cryptography.cs",
+              "RelativeToolTip": "HRIS.Infrastructure\\Services\\Cryptography.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAUwFEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:46:39.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IJwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IJwtTokenService.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Common\\Interfaces\\IJwtTokenService.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\IJwtTokenService.cs",
+              "RelativeToolTip": "HRIS.Application\\Common\\Interfaces\\IJwtTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:42:43.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ICryptography.cs",
+              "DocumentMoniker": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\ICryptography.cs",
+              "RelativeDocumentMoniker": "HRIS.Application\\Common\\Interfaces\\ICryptography.cs",
+              "ToolTip": "C:\\Users\\lerju\\source\\repos\\HRIS_V2\\HRIS.Application\\Common\\Interfaces\\ICryptography.cs",
+              "RelativeToolTip": "HRIS.Application\\Common\\Interfaces\\ICryptography.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-07T18:42:22.56Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

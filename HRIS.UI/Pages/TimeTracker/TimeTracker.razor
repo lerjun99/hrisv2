@@ -1,0 +1,479 @@
+﻿@using System.Net.Http.Json
+@inject HttpClient Http
+@inject IJSRuntime JS
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-12">
+            <p>Welcome, @UserName! Use the buttons below to log your times.</p>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="alert alert-light border shadow-sm">
+                <div class="d-flex flex-wrap gap-4 justify-content-between">
+                    <div>
+                        <strong>🕒 Work Time:</strong>
+                        <span class="ms-2 text-success fw-semibold">
+                            @FormatDuration(RunningWorkDuration)
+                        </span>
+                    </div>
+
+                    @if (RunningBreak1.HasValue)
+                    {
+                        <div>
+                            <strong>☕ Morning Break:</strong>
+                            <span class="ms-2 text-warning fw-semibold">
+                                @FormatDuration(RunningBreak1)
+                            </span>
+                        </div>
+                    }
+
+                    @if (RunningLunch.HasValue)
+                    {
+                        <div>
+                            <strong>🍽️ Lunch:</strong>
+                            <span class="ms-2 text-info fw-semibold">
+                                @FormatDuration(RunningLunch)
+                            </span>
+                        </div>
+                    }
+
+                    @if (RunningBreak3.HasValue)
+                    {
+                        <div>
+                            <strong>🧃 Afternoon Break:</strong>
+                            <span class="ms-2 text-secondary fw-semibold">
+                                @FormatDuration(RunningBreak3)
+                            </span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-2 mb-4 justify-content-center">
+        <!-- Clock In -->
+        <div class="col-6 col-md-3">
+            <button class="btn btn-primary w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="ClockIn"
+                    disabled="@(CurrentEntry.ClockIn.HasValue)">
+                <i class="bi bi-box-arrow-in-right fs-5"></i>
+                <span>Clock In</span>
+            </button>
+        </div>
+
+        <!-- Morning Break Start/End -->
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="StartBreak1"
+                    disabled="@(!CurrentEntry.ClockIn.HasValue || CurrentEntry.Break1In.HasValue)">
+                <i class="bi bi-cup-hot fs-5"></i>
+                <span>Start Morning Break</span>
+            </button>
+        </div>
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="EndBreak1"
+                    disabled="@(!CurrentEntry.Break1In.HasValue || CurrentEntry.Break1Out.HasValue)">
+                <i class="bi bi-cup-hot-fill fs-5"></i>
+                <span>End Morning Break</span>
+            </button>
+        </div>
+
+        <!-- Lunch Start/End -->
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-info w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="StartLunch"
+                    disabled="@(!CurrentEntry.ClockIn.HasValue || CurrentEntry.LunchIn.HasValue)">
+                <i class="bi bi-egg-fried fs-5"></i>
+                <span>Start Lunch</span>
+            </button>
+        </div>
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-info w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="EndLunch"
+                    disabled="@(!CurrentEntry.LunchIn.HasValue || CurrentEntry.LunchOut.HasValue)">
+                <i class="bi bi-egg-fill fs-5"></i>
+                <span>End Lunch</span>
+            </button>
+        </div>
+
+        <!-- Afternoon Break Start/End -->
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="StartBreak3"
+                    disabled="@(!CurrentEntry.ClockIn.HasValue || CurrentEntry.Break3In.HasValue)">
+                <i class="bi bi-cup-straw fs-5"></i>
+                <span>Start Afternoon Break</span>
+            </button>
+        </div>
+        <div class="col-6 col-md-3">
+            <button class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="EndBreak3"
+                    disabled="@(!CurrentEntry.Break3In.HasValue || CurrentEntry.Break3Out.HasValue)">
+                <i class="bi bi-cup fs-5"></i>
+                <span>End Afternoon Break</span>
+            </button>
+        </div>
+
+        <!-- Clock Out -->
+        <div class="col-6 col-md-3">
+            <button class="btn btn-danger w-100 h-100 d-flex align-items-center justify-content-center gap-2 shadow-sm"
+                    @onclick="ClockOut"
+                    disabled="@(!CurrentEntry.ClockIn.HasValue || CurrentEntry.ClockOut.HasValue)">
+                <i class="bi bi-box-arrow-right fs-5"></i>
+                <span>Clock Out</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Time Log Table -->
+    <div class="row">
+        <div class="col-12">
+            <h3>Your Time Log</h3>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Clock In</th>
+                            <th>Morning Break In</th>
+                            <th>Morning Break Out</th>
+                            <th>Morning Break Duration</th>
+                            <th>Lunch In</th>
+                            <th>Lunch Out</th>
+                            <th>Lunch Duration</th>
+                            <th>Afternoon Break In</th>
+                            <th>Afternoon Break Out</th>
+                            <th>Afternoon Break Duration</th>
+                            <th>Clock Out</th>
+                            <th>Total Work Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Entries.Any())
+                        {
+                            // Grand total across all entries
+                            var grandTotal = Entries
+                            .Where(e => e.TotalDuration.HasValue)
+                            .Aggregate(TimeSpan.Zero, (sum, e) => sum + e.TotalDuration.Value);
+
+                            // Group by date
+                            var groupedByDate = Entries
+                            .GroupBy(e => e.ClockIn?.Date)
+                            .OrderBy(g => g.Key);
+
+                            // Optional: Display grand total row at the top
+                            <tr class="table-info fw-bold">
+                                <td colspan="12" style="text-align:start">Grand Total Hours</td>
+                                <td>@FormatDuration(grandTotal)</td>
+                            </tr>
+
+                            foreach (var group in groupedByDate)
+                            {
+                                var collapseId = $"collapse-{group.Key:yyyyMMdd}";
+
+                        <!-- Total row per date -->
+                        <tr class="table-secondary fw-bold text-start" style="cursor:pointer;" @onclick="@(() => ToggleCollapse(collapseId))">
+                            <td colspan="12" style="text-align:start">
+                                <i class="bi bi-chevron-right me-2 @(ExpandedGroups.Contains(collapseId) ? "rotate-90" : "")"></i>
+                                Total Hours for @group.Key?.ToString("yyyy-MM-dd")
+                            </td>
+                            <td>
+                                @FormatDuration(group.Where(e => e.TotalDuration.HasValue)
+                                                                .Aggregate(TimeSpan.Zero, (sum, e) => sum + e.TotalDuration.Value))
+                            </td>
+                        </tr>
+
+                        <!-- Expandable rows -->
+                        @foreach (var entry in group)
+                                {
+                                    <tr class="@(ExpandedGroups.Contains(collapseId) ? "" : "d-none")">
+                                        <td>@entry.UserName</td>
+                                        <td>@FormatDate(entry.ClockIn)</td>
+                                        <td>@FormatDate(entry.Break1In)</td>
+                                        <td>@FormatDate(entry.Break1Out)</td>
+                                        <td>@FormatDuration(entry.Break1Duration)</td>
+                                        <td>@FormatDate(entry.LunchIn)</td>
+                                        <td>@FormatDate(entry.LunchOut)</td>
+                                        <td>@FormatDuration(entry.LunchDuration)</td>
+                                        <td>@FormatDate(entry.Break3In)</td>
+                                        <td>@FormatDate(entry.Break3Out)</td>
+                                        <td>@FormatDuration(entry.Break3Duration)</td>
+                                        <td>@FormatDate(entry.ClockOut)</td>
+                                        <td>@FormatDuration(entry.TotalDuration)</td>
+                                    </tr>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="13">No entries yet. Start by clocking in!</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+ </div>
+@code {
+    [Parameter] public string UserName { get; set; } = "lerjun";
+
+    private List<TimeEntry> Entries = new();
+    private TimeEntry CurrentEntry = new();
+    private System.Threading.Timer? _timer;
+    private DateTime Now => DateTime.Now;
+    private HashSet<string> ExpandedGroups = new();
+
+    private void ToggleCollapse(string id)
+    {
+        if (ExpandedGroups.Contains(id))
+            ExpandedGroups.Remove(id);
+        else
+            ExpandedGroups.Add(id);
+    }
+    private string GetCollapseClass(string id)
+    {
+        return ExpandedGroups.Contains(id) ? "" : "d-none";
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        CurrentEntry.UserName = UserName;
+        await LoadEntries();
+
+        _timer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(StateHasChanged);
+        }, null, TimeSpan.Zero, TimeSpan.FromSeconds(1));
+    }
+
+    // ----------------- API Methods -----------------
+    private async Task ClockIn()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/clock-in?userName={UserName}", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.ClockIn = DateTime.Now;
+            await LoadEntries();
+            StateHasChanged();
+        }
+    }
+
+    private async Task StartBreak1()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/start-break?userName={UserName}&type=Morning", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.Break1In = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task EndBreak1()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/end-break?userName={UserName}&type=Morning", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.Break1Out = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task StartLunch()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/start-break?userName={UserName}&type=Lunch", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.LunchIn = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task EndLunch()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/end-break?userName={UserName}&type=Lunch", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.LunchOut = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task StartBreak3()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/start-break?userName={UserName}&type=Afternoon", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.Break3In = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task EndBreak3()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/end-break?userName={UserName}&type=Afternoon", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.Break3Out = DateTime.Now;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ClockOut()
+    {
+        var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/clock-out?userName={UserName}", null);
+        if (response.IsSuccessStatusCode)
+        {
+            CurrentEntry.ClockOut = DateTime.Now;
+            await LoadEntries();
+            CurrentEntry = new TimeEntry { UserName = UserName };
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadEntries()
+    {
+        string url = $"{AppConfig.ChatUrl}api/time-entries/{UserName}";
+        //string url = "http://localhost:5196/api/time-entries/lerjun";
+        var data = await Http.GetFromJsonAsync<List<TimeEntry>>(url);
+        Entries = data ?? new List<TimeEntry>();
+        StateHasChanged();
+    }
+
+    // ----------------- Utility -----------------
+    private string FormatDate(DateTime? dt) => dt.HasValue ? dt.Value.ToString("HH:mm:ss") : "-";
+    private string FormatDuration(TimeSpan? ts) => ts.HasValue ? $"{ts.Value.Hours}h {ts.Value.Minutes}m {ts.Value.Seconds}s" : "-";
+
+    private TimeSpan? RunningWorkDuration
+    {
+        get
+        {
+            if (!CurrentEntry.ClockIn.HasValue) return null;
+            var end = CurrentEntry.ClockOut ?? Now;
+            var total = end - CurrentEntry.ClockIn.Value;
+
+            if (CurrentEntry.Break1In.HasValue) total -= (CurrentEntry.Break1Out ?? Now) - CurrentEntry.Break1In.Value;
+            if (CurrentEntry.LunchIn.HasValue) total -= (CurrentEntry.LunchOut ?? Now) - CurrentEntry.LunchIn.Value;
+            if (CurrentEntry.Break3In.HasValue) total -= (CurrentEntry.Break3Out ?? Now) - CurrentEntry.Break3In.Value;
+
+            return total;
+        }
+    }
+
+    private TimeSpan? RunningBreak1 => CurrentEntry.Break1In.HasValue && !CurrentEntry.Break1Out.HasValue ? Now - CurrentEntry.Break1In.Value : null;
+    private TimeSpan? RunningLunch => CurrentEntry.LunchIn.HasValue && !CurrentEntry.LunchOut.HasValue ? Now - CurrentEntry.LunchIn.Value : null;
+    private TimeSpan? RunningBreak3 => CurrentEntry.Break3In.HasValue && !CurrentEntry.Break3Out.HasValue ? Now - CurrentEntry.Break3In.Value : null;
+
+    // ----------------- TimeEntry DTO -----------------
+    public class TimeEntry
+    {
+        public string UserName { get; set; } = string.Empty;
+        public DateTime? ClockIn { get; set; }
+        public DateTime? Break1In { get; set; }
+        public DateTime? Break1Out { get; set; }
+        public TimeSpan? Break1Duration => Break1Out.HasValue && Break1In.HasValue ? Break1Out - Break1In : null;
+        public DateTime? LunchIn { get; set; }
+        public DateTime? LunchOut { get; set; }
+        public TimeSpan? LunchDuration => LunchOut.HasValue && LunchIn.HasValue ? LunchOut - LunchIn : null;
+        public DateTime? Break3In { get; set; }
+        public DateTime? Break3Out { get; set; }
+        public TimeSpan? Break3Duration => Break3Out.HasValue && Break3In.HasValue ? Break3Out - Break3In : null;
+        public DateTime? ClockOut { get; set; }
+        public TimeSpan? TotalDuration
+        {
+            get
+            {
+                if (!ClockIn.HasValue || !ClockOut.HasValue) return null;
+                var total = ClockOut.Value - ClockIn.Value;
+                if (Break1Duration.HasValue) total -= Break1Duration.Value;
+                if (LunchDuration.HasValue) total -= LunchDuration.Value;
+                if (Break3Duration.HasValue) total -= Break3Duration.Value;
+                return total;
+            }
+        }
+    }
+}
+
+<style>
+    .rotate-90 {
+        transform: rotate(90deg);
+        transition: transform 0.2s;
+    }
+    /* Mobile-first styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .table {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    th, td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    /* Larger screens */
+    @@media (min-width: 768px) {
+        .container
+
+    {
+        max-width: 100%;
+    }
+
+    .table {
+        font-size: 1rem;
+    }
+
+    }
+    /* Ensure buttons have equal height in each row */
+    .row.g-2 .btn {
+        min-height: 60px; /* good tap target size on mobile */
+        font-size: 0.95rem;
+        padding: 0.6rem 0.75rem;
+        white-space: normal; /* allow text to wrap if needed */
+        line-height: 1.4;
+    }
+
+    @@media (max-width: 576px) {
+        .row.g-2 .btn
+
+    {
+        min-height: 68px; /* slightly taller on very small screens */
+        font-size: 0.9rem;
+    }
+
+    .btn span {
+        font-size: 0.9rem;
+    }
+
+    }
+
+    /* Optional: make icon slightly bigger on mobile */
+    @@media (max-width: 576px) {
+        .btn i.bi
+
+    {
+        font-size: 1.4rem;
+    }
+
+    }
+</style>

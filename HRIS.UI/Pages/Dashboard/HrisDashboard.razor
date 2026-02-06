@@ -1,0 +1,230 @@
+﻿@page "/hrisdashboard"
+@using TimeTracker
+<div class="mt-4 mb-5">
+
+    <h2 class="mb-1">Time Management Dashboard</h2>
+@* 
+    <p class="text-muted mb-4">
+        @if (UserRole == "Admin")
+        {
+            <text>Full system overview • Administrator view</text>
+        }
+        else if (UserRole == "Supervisor")
+        {
+            <text>Team oversight • Manager / Supervisor view</text>
+        }
+        else
+        {
+            <text>My activities • Employee view</text>
+        }
+    </p> *@
+
+    <!-- CARD-STYLE TABS / STEPPER HEADER -->
+    <div class="d-flex flex-wrap gap-3 mb-4 justify-content-center justify-content-md-start">
+        @foreach (var step in Steps)
+        {
+            var isActive = ActiveTab == step.Key;
+            var isDisabled = step.Key == "approvals" && UserRole == "Employee";
+
+            <button type="button"
+                    class="btn btn-outline-primary border-2 shadow-sm px-4 py-3 rounded-3 position-relative overflow-hidden
+                   @(isActive ? "active-card" : "")
+                   @(isDisabled ? "opacity-50 pe-none" : "hover-lift")"
+                    style="min-width: 180px; transition: all 0.2s ease;"
+                    @onclick="@(() => { if (!isDisabled) ActiveTab = step.Key; })"
+                    disabled="@isDisabled">
+
+                <div class="d-flex flex-column align-items-center">
+                    <i class="@step.Icon me-2 fs-4"></i>
+                    <span class="fw-semibold">@step.Label</span>
+                </div>
+
+                @if (isActive)
+                {
+                    <div class="position-absolute bottom-0 start-0 end-0" style="height: 4px; background: var(--bs-primary);"></div>
+                }
+            </button>
+        }
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="card shadow border-0 rounded-3 overflow-hidden">
+@if (ActiveTab == "time")
+{
+    <div class="card-body p-4 p-md-5">
+
+                <DynamicComponent Type="@typeof(TimeTracker)"
+                                  Parameters="@(new Dictionary<string, object>
+                                  {
+                                      ["UserName"] = CurrentUserInitials
+                                  })" />
+
+    </div>
+}
+        @if (ActiveTab == "approvals" && UserRole != "Employee")
+        {
+            <div class="card-body p-4 p-md-5">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Pending Approvals (4)</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm mb-0">
+                                <thead class="table-light">
+                                    <tr><th>Employee</th><th>Date</th><th>Duration</th><th>Task</th><th>Actions</th></tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in pendingApprovals)
+                                    {
+                                        <tr>
+                                            <td>@item.Employee</td>
+                                            <td>@item.Date</td>
+                                            <td>@item.Duration</td>
+                                            <td>@item.Task</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-success me-1">Approve</button>
+                                                <button class="btn btn-sm btn-danger">Reject</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (ActiveTab == "reports")
+        {
+            <div class="card-body p-4 p-md-5">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary shadow-sm h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Monthly Goal</h6>
+                                <h3>160 h</h3>
+                                <p class="mb-0">Progress: 92%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-warning shadow-sm h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Overtime This Month</h6>
+                                <h3>7 h 45 m</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-success shadow-sm h-100">
+                            <div class="card-body">
+                                <h6 class="card-title">Avg Daily Hours</h6>
+                                <h3>7.6 h</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-5" />
+
+                <h5 class="mb-3">Weekly Trend</h5>
+                <div class="border rounded p-5 text-center bg-light" style="min-height: 280px;">
+                    [ Placeholder — Chart component goes here ]
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <!-- Optional navigation buttons -->
+    @if (ShowWizardNavigation)
+    {
+        <div class="d-flex justify-content-between mt-4">
+            <button class="btn btn-outline-secondary px-4" @onclick="PreviousStep" disabled="@(ActiveStepIndex <= 0)">Previous</button>
+            <button class="btn btn-primary px-4" @onclick="NextStep" disabled="@(ActiveStepIndex >= Steps.Count - 1)">Next</button>
+        </div>
+    }
+
+</div>
+<style>
+    .hover-lift:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.12) !important;
+        transition: all 0.2s ease;
+    }
+
+    .active-card {
+        background-color: rgba(var(--bs-primary-rgb), 0.08);
+        border-color: var(--bs-primary) !important;
+        color: var(--bs-primary);
+        font-weight: 600;
+    }
+
+    .btn-outline-primary.active-card {
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+    }
+</style>
+@code {
+    private string UserRole { get; set; } = "Supervisor"; // ← test with "Admin", "Employee"
+    private string CurrentUserInitials => "lerjun";
+    private string ActiveTab { get; set; } = "time";
+    private bool ShowWizardNavigation { get; set; } = false; // set to true if you want guided flow
+
+    private int ActiveStepIndex => Steps.FindIndex(s => s.Key == ActiveTab);
+
+    private readonly List<(string Key, string Label, string Icon)> Steps = new()
+    {
+        ("time",      "Time Tracking",      "bi bi-clock-history"),
+        ("approvals", "Approvals",          "bi bi-check2-square"),
+        ("reports",   "Reports & Insights", "bi bi-graph-up")
+    };
+
+    private void NextStep()
+    {
+        var idx = ActiveStepIndex;
+        if (idx < Steps.Count - 1)
+        {
+            var nextKey = Steps[idx + 1].Key;
+            if (nextKey == "approvals" && UserRole == "Employee") return;
+            ActiveTab = nextKey;
+        }
+    }
+
+    private void PreviousStep()
+    {
+        var idx = ActiveStepIndex;
+        if (idx > 0)
+        {
+            ActiveTab = Steps[idx - 1].Key;
+        }
+    }
+
+    // ──────────────── Mock data (unchanged) ────────────────
+    private readonly List<TimeEntry> myTimeEntries = new()
+    {
+        new(DateTime.Today.AddDays(-5), "Sprint planning & backlog grooming", "7h 30m", "Approved"),
+        new(DateTime.Today.AddDays(-4), "Feature - Payment integration",      "6h 15m", "Pending"),
+        new(DateTime.Today.AddDays(-3), "Bugfix - Invoice PDF generation",   "4h 45m", "Approved"),
+        // ... add more as needed
+    };
+
+    private readonly List<TeamDaySummary> teamTimeSummary = new()
+    {
+        new("Maria Santos", "8h", "6h", "7.5h", "8h",   "4h",   "33.5h"),
+        new("John Reyes",   "7h", "8h", "6h",   "7h",   "8h",   "36h"),
+        // ...
+    };
+
+    private readonly List<PendingApproval> pendingApprovals = new()
+    {
+        new("Anna Lim",     "Jan 27", "8h 15m", "UI Redesign - Dashboard"),
+        new("John Reyes",   "Jan 27", "9h 00m", "API - Overtime calculation"),
+        // ...
+    };
+
+    private record TimeEntry(DateTime Date, string TaskName, string Duration, string Status);
+    private record TeamDaySummary(string EmployeeName, string Mon, string Tue, string Wed, string Thu, string Fri, string Total);
+    private record PendingApproval(string Employee, string Date, string Duration, string Task);
+}

@@ -1,0 +1,51 @@
+﻿using HRIS.Application.Common.Interfaces;
+using HRIS.Application.Features.TimeEntries.Commands;
+using HRIS.Domain.Enums;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HRIS.Application.Features.TimeEntries.Handlers
+{
+    public class BreakHandler :
+      IRequestHandler<StartBreakCommand, Unit>,
+      IRequestHandler<EndBreakCommand, Unit>
+    {
+        private readonly ITimeEntryRepository _repo;
+
+        public BreakHandler(ITimeEntryRepository repo) => _repo = repo;
+
+        public async Task<Unit> Handle(StartBreakCommand request, CancellationToken ct)
+        {
+            var entry = await _repo.GetOpenEntry(request.UserName);
+
+            if (request.Type == BreakType.Morning)
+                entry!.Break1In = DateTime.UtcNow;
+            if (request.Type == BreakType.Lunch)
+                entry!.LunchIn = DateTime.UtcNow;
+            if (request.Type == BreakType.Afternoon)
+                entry!.Break3In = DateTime.UtcNow;
+
+            await _repo.Update(entry!);
+            return Unit.Value;
+        }
+
+        public async Task<Unit> Handle(EndBreakCommand request, CancellationToken ct)
+        {
+            var entry = await _repo.GetOpenEntry(request.UserName);
+
+            if (request.Type == BreakType.Morning)
+                entry!.Break1Out = DateTime.UtcNow;
+            if (request.Type == BreakType.Lunch)
+                entry!.LunchOut = DateTime.UtcNow;
+            if (request.Type == BreakType.Afternoon)
+                entry!.Break3Out = DateTime.UtcNow;
+
+            await _repo.Update(entry!);
+            return Unit.Value;
+        }
+    }
+}

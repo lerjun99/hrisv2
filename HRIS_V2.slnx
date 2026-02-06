@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="HRIS.Application/HRIS.Application.csproj" />
+  <Project Path="HRIS.Domain/HRIS.Domain.csproj" />
+  <Project Path="HRIS.Infrastructure/HRIS.Infrastructure.csproj" />
+  <Project Path="HRIS.UI/HRIS.UI.csproj" Id="c90cd809-5720-4e36-ab92-b2ce57d0125b" />
+  <Project Path="HRIS_API/HRIS_API.csproj" />
+</Solution>

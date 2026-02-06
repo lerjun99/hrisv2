@@ -1,0 +1,98 @@
+﻿@page "/dashboard"
+@inject IJSRuntime JS
+@inject NavigationManager Nav
+<div class="dashboard-container">
+
+    <h2 class="dashboard-title">Application Portal</h2>
+    <p class="dashboard-subtitle">Select a system to continue</p>
+
+    <div class="dashboard-grid">
+
+        <div class="app-tile hris" @onclick='() => GoTo("/hrisdashboard")'>
+            <i class="fa-solid fa-users-gear"></i>
+            <h4>HRIS</h4>
+            <p>Human Resource Information System</p>
+        </div>
+
+        <div class="app-tile client" @onclick='() => ShowTileModal("Client Portal is under construction!")'>
+            <i class="fa-solid fa-user-tie"></i>
+            <h4>Client Portal</h4>
+            <p>Customer access & service requests</p>
+        </div>
+
+        <div class="app-tile erp" @onclick='() => ShowTileModal("ERP is under construction!")'>
+            <i class="fa-solid fa-industry"></i>
+            <h4>ERP</h4>
+            <p>Operations & enterprise management</p>
+        </div>
+
+        <div class="app-tile crm" @onclick='() => ShowTileModal("CRM is under construction!")'>
+            <i class="fa-solid fa-handshake"></i>
+            <h4>CRM</h4>
+            <p>Customer relationship management</p>
+        </div>
+
+        <div class="app-tile admin" @onclick='() => ShowTileModal("Admin Portal is under construction!")'>
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>Admin Portal</h4>
+            <p>System configuration & access control</p>
+        </div>
+
+        <div class="app-tile support" @onclick='() => OpenInNewTab("https://portal.odeccisolutions.com/")'>
+            <i class="fa-solid fa-headset"></i>
+            <h4>Support</h4>
+            <p>Technical assistance & helpdesk</p>
+        </div>
+        <div class="app-tile amc" @onclick='() => ShowTileModal("AMC (Annual Maintenance Contract) is under construction!")'>
+            <i class="fa-solid fa-file-contract"></i>
+            <h4>AMC</h4>
+            <p>Annual Maintenance Contract</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Under Construction Modal -->
+@if (showModal)
+{
+    <div class="modal show d-block custom-modal-overlay" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content custom-modal-content">
+                <div class="modal-header bg-warning text-dark justify-content-center">
+                    <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+                </div>
+                <div class="modal-body text-center">
+                    <h5 class="modal-title fw-bold mb-3">WARNING</h5>
+                    <p>@modalMessage</p>
+                    <button class="btn btn-warning text-white mt-3 px-4" @onclick="CloseModal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private bool showModal = false;
+    private string modalMessage = "";
+
+    private void ShowTileModal(string message)
+    {
+        modalMessage = message;
+        showModal = true;
+    }
+
+    private void CloseModal()
+    {
+        showModal = false;
+    }
+
+    private async Task OpenInNewTab(string url)
+    {
+        await JS.InvokeVoidAsync("window.open", url, "_blank");
+    }
+  
+    void GoTo(string url)
+    {
+        Nav.NavigateTo(url);
+    }
+}

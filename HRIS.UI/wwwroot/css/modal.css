@@ -1,0 +1,30 @@
+﻿.custom-modal-overlay {
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1050;
+}
+
+.custom-modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.bg-warning {
+    background: #ff9800;
+    color: white;
+    padding: 20px;
+}
+
+.custom-modal-content .modal-body {
+    padding: 20px;
+}
+
+.custom-modal-content .modal-title {
+    font-size: 25px;
+}
+
+.custom-modal-content button.btn-warning {
+    background: #ff9800;
+    border: none;
+    border-radius: 6px;
+}

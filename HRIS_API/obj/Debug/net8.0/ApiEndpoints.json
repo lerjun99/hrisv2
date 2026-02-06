@@ -1,0 +1,124 @@
+[
+  {
+    "ContainingType": "HRIS_API.Controllers.TimeEntriesController",
+    "Method": "GetLogs",
+    "RelativePath": "api/time-entries/{userName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.TimeEntriesController",
+    "Method": "ClockIn",
+    "RelativePath": "api/time-entries/clock-in",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.TimeEntriesController",
+    "Method": "ClockOut",
+    "RelativePath": "api/time-entries/clock-out",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.TimeEntriesController",
+    "Method": "EndBreak",
+    "RelativePath": "api/time-entries/end-break",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.TimeEntriesController",
+    "Method": "StartBreak",
+    "RelativePath": "api/time-entries/start-break",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "type",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.FaceRecognitionController",
+    "Method": "Identify",
+    "RelativePath": "FaceRecognition/Identify/identify",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "HRIS.Application.Features.FaceRecognition.Commands.IdentifyFaceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HRIS_API.Controllers.FaceRecognitionController",
+    "Method": "Register",
+    "RelativePath": "FaceRecognition/Register/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "HRIS.Application.Features.FaceRecognition.Commands.RegisterFaceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

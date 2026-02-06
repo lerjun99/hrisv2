@@ -1,0 +1,212 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container-fluid px-3 px-md-4">
+
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center fw-bold fs-5" href="">
+            <i class="fa-solid fa-building-columns me-2"></i> ODECCI PORTAL
+        </a>
+
+        <!-- RIGHT TOGGLERS (mobile-first: bell + hamburger) -->
+        <div class="d-flex align-items-center order-lg-2 gap-10">
+
+            <!-- Notification Bell – always visible, different behavior by screen size -->
+            <div class="nav-item dropdown">
+                <a class="nav-link position-relative px-2 py-1 text-white"
+                   href="#"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false"
+                   @onclick:preventDefault="@(!IsDesktop)">
+                    <!-- only prevent default on mobile -->
+
+                    <i class="fa-solid fa-bell fa-lg"></i>
+                    @if (NotificationCount > 0)
+                    {
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            @(NotificationCount > 99 ? "99+" : NotificationCount)
+                        </span>
+                    }
+                </a>
+
+                <!-- Dropdown menu – shared, but visibility controlled via classes -->
+                <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 p-2 notification-dropdown"
+                    style="min-width: 320px; max-height: 380px; overflow-y: auto;">
+                    @if (!Notifications.Any())
+                    {
+                        <li class="text-center text-muted py-4">No new notifications</li>
+                    }
+                    else
+                    {
+                        @foreach (var n in Notifications)
+                        {
+                            <li>
+                                <a class="dropdown-item small py-2 d-flex flex-column"
+                                   href="#"
+                                   @onclick="() => ShowNotificationDetail(n)"
+                                   @onclick:preventDefault="true">
+                                    <strong>@n.Title</strong>
+                                    <div class="text-muted mt-1 small">@n.Message</div>
+                                </a>
+                            </li>
+                        }
+                    }
+                    <li><hr class="dropdown-divider my-2" /></li>
+                    <li class="text-center">
+                        <a class="dropdown-item fw-semibold" href="#">View all notifications</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hamburger (only mobile) -->
+            <button class="navbar-toggler d-lg-none"
+                    type="button"
+                    @onclick="ToggleNavMenu"
+                    aria-controls="navbarContent"
+                    aria-expanded="@(!collapseNavMenu)"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Collapsible content -->
+        <div class="@NavMenuCssClass" id="navbarContent">
+
+            <!-- CENTER MENU -->
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 nav-center d-flex justify-content-center gap-1 gap-lg-4">
+                <li class="nav-item">
+                    <NavLink class="nav-link px-3 py-2" href="" Match="NavLinkMatch.All" ActiveClass="active">
+                        <i class="fa-solid fa-house me-1"></i> Home
+                    </NavLink>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle px-3 py-2" href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">
+                        <i class="fa-solid fa-layer-group me-1"></i> Modules
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark shadow-lg border-0">
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-users me-2"></i> HR</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-money-check-dollar me-2"></i> Payroll</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-file-lines me-2"></i> Reports</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- RIGHT SIDE – Desktop only notifications removed (now shared) -->
+            <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-2 gap-lg-3 d-none d-lg-flex">
+
+                <!-- Profile -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center px-2 py-1 profile-trigger"
+                       href="#"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <i class="fa-solid fa-circle-user fa-xl me-2"></i>
+                        <span class="d-none d-md-inline fw-medium">@UserName</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0" style="min-width: 220px;">
+                        <li class="profile-header text-center px-4 py-3 bg-light">
+                            <i class="fa-solid fa-circle-user fa-3x text-primary mb-2"></i>
+                            <div class="fw-bold">@UserName</div>
+                            <div class="text-muted small">@UserRole</div>
+                        </li>
+                        <li><hr class="dropdown-divider my-1" /></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i> Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gear me-2"></i> Settings</a></li>
+                        <li><hr class="dropdown-divider my-1" /></li>
+                        <li><a class="dropdown-item text-danger" href="#"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Temporary selected notification display (replace with modal later if desired) -->
+@if (SelectedNotification != null)
+{
+    <div class="alert alert-info alert-dismissible fade show m-3" role="alert">
+        <button type="button" class="btn-close" @onclick="() => SelectedNotification = null"></button>
+        <h5 class="alert-heading">@SelectedNotification.Title</h5>
+        <p>@SelectedNotification.Message</p>
+        <hr />
+        <small class="text-muted">Received just now</small>
+    </div>
+}
+
+<!-- Styles -->
+<style>
+    body {
+        padding-top: 56px;
+    }
+
+    .notification-dropdown {
+        max-width: 90vw;
+    }
+
+    @@media (min-width: 992px) {
+        .notification-dropdown {
+            min-width: 360px !important;
+        }
+    }
+
+    .nav-center .nav-link {
+        transition: all 0.2s;
+    }
+
+        .nav-center .nav-link:hover,
+        .nav-center .nav-link.active {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 6px;
+        }
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+    }
+
+    .profile-header {
+        background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+        color: white;
+        border-radius: 6px 6px 0 0;
+    }
+</style>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu
+        ? "collapse navbar-collapse"
+        : "navbar-collapse show";
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    // You can keep using Bootstrap dropdown – no need for custom mobile toggle logic
+    // But if you really want different mobile behavior (e.g. slide-in panel), let me know
+
+    public List<NotificationItem> Notifications { get; set; } = new()
+    {
+        new("Leave Approval", "3 leave requests pending approval. Please review them in the HR module."),
+        new("Payroll", "Payroll run completed successfully for January 2026."),
+        new("System", "New system update available – version 2.4.1. Restart required after shift."),
+        new("Security", "Unusual login attempt detected from new device.")
+    };
+
+    int NotificationCount => Notifications.Count;
+
+    private NotificationItem? SelectedNotification { get; set; }
+
+    private void ShowNotificationDetail(NotificationItem notification)
+    {
+        SelectedNotification = notification;
+        // Optional: force close dropdown (usually not needed)
+        // You can inject IJSRuntime and do: await JS.InvokeVoidAsync("bootstrap.Dropdown.getInstance(element).hide()");
+    }
+
+    string UserName = "Juan Dela Cruz";
+    string UserRole = "HR Administrator";
+
+    // Helper (optional – mostly for clarity)
+    private bool IsDesktop => false; // you could detect via JS interop if needed
+
+    public record NotificationItem(string Title, string Message);
+}
