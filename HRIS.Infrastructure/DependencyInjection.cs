@@ -1,4 +1,5 @@
 ﻿using HRIS.Application.Common.Interfaces;
+using HRIS.Infrastructure.Common;
 using HRIS.Infrastructure.Persistence;
 using HRIS.Infrastructure.Persistence.Repositories;
 using HRIS.Infrastructure.Services;
@@ -33,6 +34,7 @@ namespace HRIS.Infrastructure
             services.AddScoped<IJwtTokenService, JwtAuthenticationManager>();
             services.AddScoped<ICryptography, Cryptography>();
             services.AddScoped<ITimeEntryRepository, TimeEntryRepository>();
+            services.AddHttpClient<IPublicIpService, PublicIpService>();
 
             // ------------------- Controllers + JSON Options -------------------
             services.AddControllers()

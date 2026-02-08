@@ -1,5 +1,6 @@
 ﻿@page "/hrisdashboard"
 @using TimeTracker
+@using ScheduleDashboard
 <div class="mt-4 mb-5">
 
     <h2 class="mb-1">Time Management Dashboard</h2>
@@ -61,6 +62,23 @@
 
     </div>
 }
+        @if (ActiveTab == "schedule" && UserRole != "Employee")
+        {
+            <div class="card-body p-4 p-md-5">
+
+                <h4 class="mb-4">
+                    <i class="bi bi-calendar-week me-2"></i>
+                    Time Schedule Maintenance
+                </h4>
+
+                <DynamicComponent Type="@typeof(ScheduleDashboard)"
+                                  Parameters="@(new Dictionary<string, object>
+                                  {
+                                      ["UserName"] = CurrentUserInitials
+                                  })" />
+
+            </div>
+        }
         @if (ActiveTab == "approvals" && UserRole != "Employee")
         {
             <div class="card-body p-4 p-md-5">
@@ -148,7 +166,7 @@
     }
 
 </div>
-<style>
+@* <style>
     .hover-lift:hover {
         transform: translateY(-3px);
         box-shadow: 0 8px 16px rgba(0,0,0,0.12) !important;
@@ -165,7 +183,7 @@
     .btn-outline-primary.active-card {
         background-color: rgba(var(--bs-primary-rgb), 0.1);
     }
-</style>
+</style> *@
 @code {
     private string UserRole { get; set; } = "Supervisor"; // ← test with "Admin", "Employee"
     private string CurrentUserInitials => "lerjun";
@@ -177,6 +195,7 @@
     private readonly List<(string Key, string Label, string Icon)> Steps = new()
     {
         ("time",      "Time Tracking",      "bi bi-clock-history"),
+        ("schedule",  "Schedule Maintenance", "bi bi-calendar-week"),
         ("approvals", "Approvals",          "bi bi-check2-square"),
         ("reports",   "Reports & Insights", "bi bi-graph-up")
     };

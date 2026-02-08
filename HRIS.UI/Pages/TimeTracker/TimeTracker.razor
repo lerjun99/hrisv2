@@ -1,4 +1,5 @@
 ﻿@using System.Net.Http.Json
+@using HRIS.Application.Features.TimeEntries.DTOs
 @inject HttpClient Http
 @inject IJSRuntime JS
 
@@ -154,7 +155,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if (Entries.Any())
+                        @if (IsTableLoading)
+                        {
+                            <tr>
+                                <td colspan="13" class="text-center py-4">
+                                    <div class="d-flex justify-content-center align-items-center gap-2">
+                                        <span class="spinner-border spinner-border-sm text-primary"></span>
+                                        <span class="fw-semibold">Loading time logs…</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                        else if (Entries.Any())
                         {
                             // Grand total across all entries
                             var grandTotal = Entries
@@ -212,7 +224,9 @@
                         else
                         {
                             <tr>
-                                <td colspan="13">No entries yet. Start by clocking in!</td>
+                                <td colspan="13" class="text-center">
+                                    No entries yet. Start by clocking in!
+                                </td>
                             </tr>
                         }
                     </tbody>
@@ -221,11 +235,12 @@
         </div>
     </div>
  </div>
+
 @code {
     [Parameter] public string UserName { get; set; } = "lerjun";
-
-    private List<TimeEntry> Entries = new();
-    private TimeEntry CurrentEntry = new();
+    private bool IsTableLoading = false;
+    private List<TimeEntryDto> Entries = new();
+    private TimeEntryDto CurrentEntry = new();
     private System.Threading.Timer? _timer;
     private DateTime Now => DateTime.Now;
     private HashSet<string> ExpandedGroups = new();
@@ -244,6 +259,7 @@
     protected override async Task OnInitializedAsync()
     {
         CurrentEntry.UserName = UserName;
+        await LoadActiveEntry();
         await LoadEntries();
 
         _timer = new System.Threading.Timer(_ =>
@@ -253,12 +269,34 @@
     }
 
     // ----------------- API Methods -----------------
+    private async Task LoadActiveEntry()
+    {
+        var url = $"{AppConfig.ChatUrl}api/time-entries/active/{UserName}";
+
+        var response = await Http.GetAsync(url);
+
+        if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+        {
+            CurrentEntry = new TimeEntryDto { UserName = UserName };
+            return;
+        }
+
+        if (!response.IsSuccessStatusCode)
+        {
+            CurrentEntry = new TimeEntryDto { UserName = UserName };
+            return;
+        }
+
+        var entry = await response.Content.ReadFromJsonAsync<TimeEntryDto>();
+
+        CurrentEntry = entry ?? new TimeEntryDto { UserName = UserName };
+    }
     private async Task ClockIn()
     {
         var response = await Http.PostAsync($"{AppConfig.ChatUrl}api/time-entries/clock-in?userName={UserName}", null);
         if (response.IsSuccessStatusCode)
         {
-            CurrentEntry.ClockIn = DateTime.Now;
+            await LoadActiveEntry();
             await LoadEntries();
             StateHasChanged();
         }
@@ -270,6 +308,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.Break1In = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -280,6 +319,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.Break1Out = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -290,6 +330,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.LunchIn = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -300,6 +341,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.LunchOut = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -310,6 +352,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.Break3In = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -320,6 +363,7 @@
         if (response.IsSuccessStatusCode)
         {
             CurrentEntry.Break3Out = DateTime.Now;
+            await LoadEntries();
             StateHasChanged();
         }
     }
@@ -331,18 +375,28 @@
         {
             CurrentEntry.ClockOut = DateTime.Now;
             await LoadEntries();
-            CurrentEntry = new TimeEntry { UserName = UserName };
+            CurrentEntry = new TimeEntryDto { UserName = UserName };
+            await LoadEntries();
             StateHasChanged();
         }
     }
 
     private async Task LoadEntries()
     {
-        string url = $"{AppConfig.ChatUrl}api/time-entries/{UserName}";
-        //string url = "http://localhost:5196/api/time-entries/lerjun";
-        var data = await Http.GetFromJsonAsync<List<TimeEntry>>(url);
-        Entries = data ?? new List<TimeEntry>();
-        StateHasChanged();
+        try
+        {
+            IsTableLoading = true;
+            string url = $"{AppConfig.ChatUrl}api/time-entries/{UserName}";
+            //string url = "http://localhost:5196/api/time-entries/lerjun";
+            var data = await Http.GetFromJsonAsync<List<TimeEntryDto>>(url);
+            Entries = data ?? new List<TimeEntryDto>();
+       
+        }
+        finally
+        {
+            IsTableLoading = false;
+            StateHasChanged();
+        }
     }
 
     // ----------------- Utility -----------------
@@ -354,126 +408,43 @@
         get
         {
             if (!CurrentEntry.ClockIn.HasValue) return null;
+
+            // Use ClockOut if exists, otherwise current PH time
             var end = CurrentEntry.ClockOut ?? Now;
+
             var total = end - CurrentEntry.ClockIn.Value;
 
-            if (CurrentEntry.Break1In.HasValue) total -= (CurrentEntry.Break1Out ?? Now) - CurrentEntry.Break1In.Value;
-            if (CurrentEntry.LunchIn.HasValue) total -= (CurrentEntry.LunchOut ?? Now) - CurrentEntry.LunchIn.Value;
-            if (CurrentEntry.Break3In.HasValue) total -= (CurrentEntry.Break3Out ?? Now) - CurrentEntry.Break3In.Value;
+            if (CurrentEntry.Break1In.HasValue)
+                total -= (CurrentEntry.Break1Out ?? Now) - CurrentEntry.Break1In.Value;
 
-            return total;
+            if (CurrentEntry.LunchIn.HasValue)
+                total -= (CurrentEntry.LunchOut ?? Now) - CurrentEntry.LunchIn.Value;
+
+            if (CurrentEntry.Break3In.HasValue)
+                total -= (CurrentEntry.Break3Out ?? Now) - CurrentEntry.Break3In.Value;
+
+            // Ensure total is never negative
+            return total < TimeSpan.Zero ? TimeSpan.Zero : total;
         }
     }
 
-    private TimeSpan? RunningBreak1 => CurrentEntry.Break1In.HasValue && !CurrentEntry.Break1Out.HasValue ? Now - CurrentEntry.Break1In.Value : null;
-    private TimeSpan? RunningLunch => CurrentEntry.LunchIn.HasValue && !CurrentEntry.LunchOut.HasValue ? Now - CurrentEntry.LunchIn.Value : null;
-    private TimeSpan? RunningBreak3 => CurrentEntry.Break3In.HasValue && !CurrentEntry.Break3Out.HasValue ? Now - CurrentEntry.Break3In.Value : null;
+    private TimeSpan? RunningBreak1 =>
+        CurrentEntry.Break1In.HasValue && !CurrentEntry.Break1Out.HasValue
+            ? Now - CurrentEntry.Break1In.Value
+            : null;
+
+    private TimeSpan? RunningLunch =>
+        CurrentEntry.LunchIn.HasValue && !CurrentEntry.LunchOut.HasValue
+            ? Now - CurrentEntry.LunchIn.Value
+            : null;
+
+    private TimeSpan? RunningBreak3 =>
+        CurrentEntry.Break3In.HasValue && !CurrentEntry.Break3Out.HasValue
+            ? Now - CurrentEntry.Break3In.Value
+            : null;
+
 
     // ----------------- TimeEntry DTO -----------------
-    public class TimeEntry
-    {
-        public string UserName { get; set; } = string.Empty;
-        public DateTime? ClockIn { get; set; }
-        public DateTime? Break1In { get; set; }
-        public DateTime? Break1Out { get; set; }
-        public TimeSpan? Break1Duration => Break1Out.HasValue && Break1In.HasValue ? Break1Out - Break1In : null;
-        public DateTime? LunchIn { get; set; }
-        public DateTime? LunchOut { get; set; }
-        public TimeSpan? LunchDuration => LunchOut.HasValue && LunchIn.HasValue ? LunchOut - LunchIn : null;
-        public DateTime? Break3In { get; set; }
-        public DateTime? Break3Out { get; set; }
-        public TimeSpan? Break3Duration => Break3Out.HasValue && Break3In.HasValue ? Break3Out - Break3In : null;
-        public DateTime? ClockOut { get; set; }
-        public TimeSpan? TotalDuration
-        {
-            get
-            {
-                if (!ClockIn.HasValue || !ClockOut.HasValue) return null;
-                var total = ClockOut.Value - ClockIn.Value;
-                if (Break1Duration.HasValue) total -= Break1Duration.Value;
-                if (LunchDuration.HasValue) total -= LunchDuration.Value;
-                if (Break3Duration.HasValue) total -= Break3Duration.Value;
-                return total;
-            }
-        }
-    }
+   
 }
 
-<style>
-    .rotate-90 {
-        transform: rotate(90deg);
-        transition: transform 0.2s;
-    }
-    /* Mobile-first styles */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-    }
-
-    .container {
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .btn {
-        font-size: 1rem;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .table {
-        font-size: 0.9rem;
-        margin-bottom: 0;
-    }
-
-    th, td {
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    /* Larger screens */
-    @@media (min-width: 768px) {
-        .container
-
-    {
-        max-width: 100%;
-    }
-
-    .table {
-        font-size: 1rem;
-    }
-
-    }
-    /* Ensure buttons have equal height in each row */
-    .row.g-2 .btn {
-        min-height: 60px; /* good tap target size on mobile */
-        font-size: 0.95rem;
-        padding: 0.6rem 0.75rem;
-        white-space: normal; /* allow text to wrap if needed */
-        line-height: 1.4;
-    }
-
-    @@media (max-width: 576px) {
-        .row.g-2 .btn
-
-    {
-        min-height: 68px; /* slightly taller on very small screens */
-        font-size: 0.9rem;
-    }
-
-    .btn span {
-        font-size: 0.9rem;
-    }
-
-    }
-
-    /* Optional: make icon slightly bigger on mobile */
-    @@media (max-width: 576px) {
-        .btn i.bi
-
-    {
-        font-size: 1.4rem;
-    }
-
-    }
-</style>

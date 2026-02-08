@@ -1,0 +1,165 @@
+﻿/* =========================
+   NAVIGATION-STYLE TABS WITH ACTIVE BG
+   ========================= */
+.schedule-tabs {
+    background: #ffffff;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    overflow: hidden;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+    .schedule-tabs .nav-item {
+        flex: 1;
+        text-align: center;
+        padding: 5px 15px;
+        border-radius: 1px 5px 0 0;
+        transition: background 0.3s ease;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+        font-weight: bold;
+    }
+
+    /* Style nav-link normally */
+    .schedule-tabs .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 14px 0;
+        font-weight: 600;
+        color: #495057;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .schedule-tabs .nav-link i {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+    /* Hover effect */
+    .schedule-tabs .nav-item:hover {
+        background: rgba(var(--bs-primary-rgb), 0.08);
+    }
+
+        .schedule-tabs .nav-item:hover .nav-link {
+            color: var(--bs-primary);
+        }
+
+            .schedule-tabs .nav-item:hover .nav-link i {
+                transform: translateY(-2px);
+                opacity: 1;
+            }
+
+    .schedule-tabs .nav-item.active {
+        text-align: center;
+        padding: 5px 15px;
+        background: #0d6efd;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+        border-color: #0d6efd;
+    }
+
+    .schedule-tabs .nav-item:hover {
+        background: var(--bs-primary-bg-subtle);
+    }
+
+    .schedule-tabs .nav-item.active .nav-link {
+        color: #ffffff; /* Text turns white */
+        font-weight: 700;
+    }
+
+        .schedule-tabs .nav-item.active .nav-link i {
+            opacity: 1;
+        }
+    /* =========================
+   CARD & TABLE STYLING
+   ========================= */
+    .card.shadow {
+        box-shadow: 0 12px 28px rgba(0,0,0,0.08) !important;
+        border: none;
+        border-radius: 16px;
+    }
+
+    .card-body h5 {
+        font-weight: 600;
+        color: #343a40;
+    }
+
+    .table {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #dee2e6;
+    }
+
+        .table th, .table td {
+            vertical-align: middle;
+            padding: 14px 12px;
+            transition: background 0.25s ease;
+        }
+
+        .table thead {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+
+        .table tbody tr:hover {
+            background: rgba(0, 123, 255, 0.05);
+        }
+
+    .schedule-cell {
+        background: #e9f2ff;
+        border-radius: 8px;
+        font-weight: 500;
+        color: #0d6efd;
+    }
+    /* Buttons */
+    .btn-primary {
+        background: linear-gradient(135deg, #4e73df, #224abe);
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        transition: all 0.25s ease;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+    .btn-success {
+        background: linear-gradient(135deg, #1cc88a, #17a673);
+        border: none;
+    }
+
+    .btn-outline-primary, .btn-outline-danger {
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-size: 0.85rem;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+        .schedule-tabs {
+            gap: 6px;
+            padding: 8px;
+        }
+
+            .schedule-tabs .nav-link {
+                font-size: 0.9rem;
+                padding: 10px 0;
+            }
+
+                .schedule-tabs .nav-link i {
+                    font-size: 1rem;
+                }
+    }
+
+    .table th, .table td {
+        padding: 10px 6px;
+    }
+}

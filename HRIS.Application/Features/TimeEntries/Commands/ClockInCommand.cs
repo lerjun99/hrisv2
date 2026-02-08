@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace HRIS.Application.Features.TimeEntries.Commands
 {
-    public record ClockInCommand(string UserName) : IRequest<int>;
+    public record ClockInCommand(int UserId,string UserName) : IRequest<int>;
 }

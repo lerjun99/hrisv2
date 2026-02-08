@@ -14,5 +14,6 @@ namespace HRIS.Application.Common.Interfaces
         Task<List<TimeEntry>> GetUserEntries(string userName);
         Task Add(TimeEntry entry);
         Task Update(TimeEntry entry);
+        Task<TimeEntry?> GetActiveEntryAsync(string userName);
     }
 }

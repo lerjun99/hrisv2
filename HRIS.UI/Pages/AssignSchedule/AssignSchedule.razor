@@ -1,0 +1,35 @@
+﻿<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Employee</label>
+                <select class="form-select">
+                    <option>Juan Dela Cruz</option>
+                    <option>Maria Santos</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-4">
+                <label>Shift Template</label>
+                <select class="form-select">
+                    <option>DAY (8-5)</option>
+                    <option>NIGHT (10-6)</option>
+                </select>
+            </div>
+
+
+            <div class="col-md-4">
+                <label>Effective Date</label>
+                <input type="date" class="form-control" />
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary mt-3">Assign</button>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string UserName { get; set; } = "lerjun";
+}

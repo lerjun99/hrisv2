@@ -1,0 +1,28 @@
+﻿<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Old Shift</th>
+            <th>New Shift</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Juan Dela Cruz</td>
+            <td>8-5</td>
+            <td>9-6</td>
+            <td>Feb 10</td>
+            <td><span class="badge bg-warning">Pending</span></td>
+            <td>
+                <button class="btn btn-sm btn-success">Approve</button>
+                <button class="btn btn-sm btn-danger">Reject</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+@code {
+    [Parameter] public string UserName { get; set; } = "lerjun";
+}

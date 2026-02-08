@@ -1,0 +1,45 @@
+﻿<div class="card-body p-4">
+
+    <button class="btn btn-primary mb-3">
+        <i class="bi bi-plus-circle me-1"></i> New Template
+    </button>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>Break</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in Templates)
+            {
+                <tr>
+                    <td>@t.Code</td>
+                    <td>@t.TimeIn</td>
+                    <td>@t.TimeOut</td>
+                    <td>@t.Break mins</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary">Edit</button>
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    [Parameter] public string UserName { get; set; } = "lerjun";
+    private readonly List<ShiftTemplateVM> Templates = new()
+    {
+        new("DAY", "08:00", "17:00", 60),
+        new("NIGHT", "22:00", "06:00", 30)
+    };
+
+    record ShiftTemplateVM(string Code, string TimeIn, string TimeOut, int Break);
+ 
+}

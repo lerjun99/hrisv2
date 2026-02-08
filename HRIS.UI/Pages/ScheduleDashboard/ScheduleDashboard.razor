@@ -1,0 +1,99 @@
+﻿@using TimeScheduling
+@using ShiftTemplates
+@using AssignSchedule
+@using ScheduleRequests
+<!-- TOP NAVIGATION -->
+<ul class="nav schedule-tabs">
+    @foreach (var tab in Tabs)
+    {
+        <li class="nav-item @(ActiveTab == tab.Key ? "active" : "")">
+            <button class="nav-link"
+                    @onclick="() => ActiveTab = tab.Key">
+                <i class="@tab.Icon"></i>
+                @tab.Label
+            </button>
+        </li>
+    }
+</ul>
+
+<!-- CONTENT -->
+<div class="card shadow border-0 rounded-3">
+    @if (ActiveTab == "calendar")
+    {
+        <div class="card-body p-4 p-md-5">
+
+
+
+            <DynamicComponent Type="@typeof(TimeScheduling)"
+                              Parameters="@(new Dictionary<string, object>
+                              {
+                                  ["UserName"] = CurrentUserInitials
+                              })" />
+
+    </div>
+
+       
+    }
+
+    @if (ActiveTab == "templates")
+    {
+      
+        <DynamicComponent Type="@typeof(ShiftTemplates)"
+                          Parameters="@(new Dictionary<string, object>
+                          {
+                              ["UserName"] = CurrentUserInitials
+                          })" />
+    }
+
+    @if (ActiveTab == "assign")
+    {
+        <DynamicComponent Type="@typeof(AssignSchedule)"
+                          Parameters="@(new Dictionary<string, object>
+                          {
+                              ["UserName"] = CurrentUserInitials
+                          })" />
+    }
+
+    @if (ActiveTab == "requests")
+    {
+        <DynamicComponent Type="@typeof(ScheduleRequests)"
+                          Parameters="@(new Dictionary<string, object>
+                          {
+                              ["UserName"] = CurrentUserInitials
+                          })" />
+    }
+</div>
+
+@code {
+    private string CurrentUserInitials => "lerjun";
+    private string ActiveTab = "calendar";
+    [Parameter] public string UserName { get; set; } = "lerjun";
+    private readonly List<(string Key, string Label, string Icon)> Tabs = new()
+    {
+        ("calendar",  "Scheduling Dashboard", "bi bi-calendar3"),
+        ("templates", "Shift Templates",      "bi bi-sliders"),
+        ("assign",    "Assign Schedule",      "bi bi-person-plus"),
+        ("requests",  "Change Requests",      "bi bi-check2-square")
+    };
+
+    private readonly List<ScheduleVM> WeeklySchedule = new()
+    {
+        new("Juan Dela Cruz", new() { "8–5","8–5","8–5","8–5","8–5","OFF","OFF" }),
+        new("Maria Santos",  new() { "9–6","9–6","9–6","9–6","9–6","OFF","OFF" })
+    };
+
+    private readonly List<ShiftTemplateVM> ShiftTemplates = new()
+    {
+        new("DAY", "08:00", "17:00", 60),
+        new("NIGHT", "22:00", "06:00", 30)
+    };
+
+    private readonly List<ScheduleRequestVM> ScheduleRequests = new()
+    {
+        new("Juan Dela Cruz", "8–5", "9–6", "Feb 10")
+    };
+
+    record ScheduleVM(string Name, List<string> Shifts);
+    record ShiftTemplateVM(string Code, string TimeIn, string TimeOut, int Break);
+    record ScheduleRequestVM(string Employee, string OldShift, string NewShift, string Date);
+}

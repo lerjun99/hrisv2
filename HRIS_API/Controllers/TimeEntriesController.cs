@@ -19,8 +19,8 @@ namespace HRIS_API.Controllers
             => _mediator = mediator;
 
         [HttpPost("clock-in")]
-        public async Task<IActionResult> ClockIn(string userName)
-            => Ok(await _mediator.Send(new ClockInCommand(userName)));
+        public async Task<IActionResult> ClockIn(int UserId,string userName)
+            => Ok(await _mediator.Send(new ClockInCommand(UserId,userName)));
 
         [HttpPost("start-break")]
         public async Task<IActionResult> StartBreak(string userName, BreakType type)
@@ -37,5 +37,15 @@ namespace HRIS_API.Controllers
         [HttpGet("{userName}")]
         public async Task<IActionResult> GetLogs(string userName)
             => Ok(await _mediator.Send(new GetUserTimeEntriesQuery(userName)));
+        [HttpGet("active/{userName}")]
+        public async Task<IActionResult> GetActiveEntry(string userName)
+        {
+            var result = await _mediator.Send(new GetActiveTimeEntryQuery(userName));
+
+            if (result == null)
+                return NoContent();
+
+            return Ok(result);
+        }
     }
 }

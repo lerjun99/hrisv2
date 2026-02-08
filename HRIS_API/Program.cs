@@ -1,6 +1,7 @@
 ﻿using Emgu.CV.Face;
 using HRIS.Application.Common.Interfaces;
 using HRIS.Application.Features.FaceRecognition.Handlers;
+using HRIS.Application.Features.TimeEntries.Queries;
 using HRIS.Infrastructure;
 using HRIS.Infrastructure.Persistence;
 using HRIS.Infrastructure.Services;
@@ -26,11 +27,11 @@ builder.Services.AddScoped<IFaceRecognitionService, OpenCvFaceRecognitionService
 
 // ------------------- Add MediatR -------------------
 // Register handlers from the assembly where IdentifyFaceHandler exists
-builder.Services.AddMediatR(cfg =>
-{
-    cfg.RegisterServicesFromAssembly(typeof(IdentifyFaceHandler).Assembly);
-});
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
+    typeof(IdentifyFaceHandler).Assembly,
+    typeof(GetActiveTimeEntryQuery).Assembly
+));
 // ------------------- Controllers -------------------
 builder.Services.AddControllers();
 

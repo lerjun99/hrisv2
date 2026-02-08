@@ -1,4 +1,5 @@
-﻿using HRIS.Application.Common.Interfaces;
+﻿using HRIS.Application.Common.Helpers;
+using HRIS.Application.Common.Interfaces;
 using HRIS.Application.Features.TimeEntries.Commands;
 using HRIS.Domain.Enums;
 using MediatR;
@@ -23,11 +24,11 @@ namespace HRIS.Application.Features.TimeEntries.Handlers
             var entry = await _repo.GetOpenEntry(request.UserName);
 
             if (request.Type == BreakType.Morning)
-                entry!.Break1In = DateTime.UtcNow;
+                entry!.Break1In = PhilippineTime.Now;
             if (request.Type == BreakType.Lunch)
-                entry!.LunchIn = DateTime.UtcNow;
+                entry!.LunchIn = PhilippineTime.Now;
             if (request.Type == BreakType.Afternoon)
-                entry!.Break3In = DateTime.UtcNow;
+                entry!.Break3In = PhilippineTime.Now;
 
             await _repo.Update(entry!);
             return Unit.Value;
@@ -38,11 +39,11 @@ namespace HRIS.Application.Features.TimeEntries.Handlers
             var entry = await _repo.GetOpenEntry(request.UserName);
 
             if (request.Type == BreakType.Morning)
-                entry!.Break1Out = DateTime.UtcNow;
+                entry!.Break1Out = PhilippineTime.Now;
             if (request.Type == BreakType.Lunch)
-                entry!.LunchOut = DateTime.UtcNow;
+                entry!.LunchOut = PhilippineTime.Now;
             if (request.Type == BreakType.Afternoon)
-                entry!.Break3Out = DateTime.UtcNow;
+                entry!.Break3Out = PhilippineTime.Now;
 
             await _repo.Update(entry!);
             return Unit.Value;

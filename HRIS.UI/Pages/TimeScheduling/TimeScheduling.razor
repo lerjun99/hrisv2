@@ -1,0 +1,71 @@
+﻿
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">Schedule Calendar</div>
+            <div class="card-body">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            @foreach (var day in WeekDays)
+                            {
+                                <th>@day</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var emp in Employees)
+                        {
+                            <tr>
+                                <td>@emp.Name</td>
+                                @foreach (var shift in emp.WeeklyShifts)
+                                {
+                                    <td class="shift-cell" @onclick="() => EditShift(emp, shift)">
+                                        @shift
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+@* 
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">Actions</div>
+            <div class="card-body">
+                <button class="btn btn-primary w-100 mb-2">Add Shift</button>
+                <button class="btn btn-secondary w-100">Manage Templates</button>
+            </div>
+        </div>
+    </div> *@
+</div>
+
+
+@code {
+    List<string> WeekDays = new() { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+    [Parameter] public string UserName { get; set; } = "lerjun";
+
+    List<EmployeeScheduleVM> Employees = new()
+{
+new() { Name = "Juan Dela Cruz", WeeklyShifts = new() { "8-5", "8-5", "8-5", "8-5", "8-5", "OFF", "OFF" } },
+new() { Name = "Maria Santos", WeeklyShifts = new() { "9-6", "9-6", "9-6", "9-6", "9-6", "OFF", "OFF" } }
+};
+
+
+    void EditShift(EmployeeScheduleVM emp, string shift)
+    {
+        // Open modal (later wired to service)
+    }
+
+
+    class EmployeeScheduleVM
+    {
+        public string Name { get; set; }
+        public List<string> WeeklyShifts { get; set; }
+    }
+}

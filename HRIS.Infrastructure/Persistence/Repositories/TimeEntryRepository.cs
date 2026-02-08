@@ -1,4 +1,5 @@
-﻿using HRIS.Application.Common.Interfaces;
+﻿using Emgu.CV.Ocl;
+using HRIS.Application.Common.Interfaces;
 using HRIS.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,10 +18,12 @@ namespace HRIS.Infrastructure.Persistence.Repositories
 
         public Task<TimeEntry?> GetOpenEntry(string userName) =>
             _db.TimeEntries
+               .AsNoTracking()
                .FirstOrDefaultAsync(x => x.UserName == userName && x.ClockOut == null);
 
         public Task<List<TimeEntry>> GetUserEntries(string userName) =>
             _db.TimeEntries
+               .AsNoTracking()
                .Where(x => x.UserName == userName)
                .OrderByDescending(x => x.ClockIn)
                .ToListAsync();
@@ -35,6 +38,22 @@ namespace HRIS.Infrastructure.Persistence.Repositories
         {
             _db.TimeEntries.Update(entry);
             await _db.SaveChangesAsync();
+        }
+        public async Task<TimeEntry?> GetActiveEntryAsync(string userName)
+        {
+            var startOfDay = DateTime.Today;          // 2026-02-08 00:00:00.0000000
+            var endOfDay = startOfDay.AddDays(1);     // 2026-02-09 00:00:00.0000000
+
+            return await _db.TimeEntries
+                .AsNoTracking()
+                .Where(x =>
+                    x.UserName == userName &&
+                    x.ClockOut == null &&
+                    x.ClockIn >= startOfDay &&
+                    x.ClockIn < endOfDay
+                )
+                .OrderByDescending(x => x.ClockIn)
+                .FirstOrDefaultAsync();
         }
     }
 }
