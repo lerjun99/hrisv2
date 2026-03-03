@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace HRIS.Application.Features.TimeEntries.Commands
 {
-    public record ClockOutCommand(string UserName) : IRequest<Unit>;
+    public record ClockOutCommand(string UserName, int UserId) : IRequest<Unit>;
 }

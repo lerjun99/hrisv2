@@ -9,6 +9,8 @@
   <ItemGroup>
     <Content Remove="Pages\Index.razor" />
   </ItemGroup>
+
+
 	<ItemGroup>
 
 		<PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />

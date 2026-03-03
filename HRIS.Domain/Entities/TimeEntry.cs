@@ -20,7 +20,13 @@ namespace HRIS.Domain.Entities
         public DateTime? Break3In { get; set; }
         public DateTime? Break3Out { get; set; }
         public DateTime? ClockOut { get; set; }
-
+        public TimeSpan? LateMinutes { get; set; }
+        public TimeSpan? UnderTimeMinutes { get; set; }
+        public TimeSpan? OvertimeMinutes { get; set; }
+        public TimeSpan? BreakOverMinutes { get; set; }
+        public bool IsLate { get; set; }
+        public bool IsUnderTime { get; set; }
+        public bool IsOvertime { get; set; }
         // ----------------- Computed Property -----------------
         public double TotalWorkedHours
         {

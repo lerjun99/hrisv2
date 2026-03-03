@@ -1,4 +1,5 @@
-﻿
+﻿@using HRIS.Application.Features.Schedule.DTOs
+@inject HttpClient Http
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -18,7 +19,7 @@
                         @foreach (var emp in Employees)
                         {
                             <tr>
-                                <td>@emp.Name</td>
+                                <td>@emp.Username</td>
                                 @foreach (var shift in emp.WeeklyShifts)
                                 {
                                     <td class="shift-cell" @onclick="() => EditShift(emp, shift)">
@@ -33,39 +34,62 @@
         </div>
     </div>
 
-@* 
-    <div class="col-md-3">
-        <div class="card">
-            <div class="card-header">Actions</div>
-            <div class="card-body">
-                <button class="btn btn-primary w-100 mb-2">Add Shift</button>
-                <button class="btn btn-secondary w-100">Manage Templates</button>
-            </div>
-        </div>
-    </div> *@
 </div>
 
 
 @code {
-    List<string> WeekDays = new() { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+    List<string> WeekDays = new()
+    {
+        "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+    };
+
     [Parameter] public string UserName { get; set; } = "lerjun";
 
-    List<EmployeeScheduleVM> Employees = new()
-{
-new() { Name = "Juan Dela Cruz", WeeklyShifts = new() { "8-5", "8-5", "8-5", "8-5", "8-5", "OFF", "OFF" } },
-new() { Name = "Maria Santos", WeeklyShifts = new() { "9-6", "9-6", "9-6", "9-6", "9-6", "OFF", "OFF" } }
-};
+    List<EmployeeScheduleVM> Employees = new();
 
+    protected override async Task OnInitializedAsync()
+    {
+        var url = $"{AppConfig.ChatUrl}api/schedule/weekly";
+        var response = await Http.GetFromJsonAsync<List<EmployeeScheduleDto>>(url);
+
+        if (response != null)
+        {
+            Employees = response.Select(e => new EmployeeScheduleVM
+            {
+                UserId = e.UserId,
+                Username= e.Username,
+                WeeklyShifts = MapShifts(e.WeeklyShifts)
+            }).ToList();
+        }
+    }
+
+    private List<string> MapShifts(List<ShiftDto> shifts)
+    {
+        var ordered = Enum.GetValues<DayOfWeek>();
+
+        return ordered.Select(day =>
+        {
+            var shift = shifts.FirstOrDefault(s => s.Day == day);
+
+            if (shift == null)
+                return "OFF";
+
+            if (shift.TimeIn == "OFF")
+                return "OFF";
+
+            return $"{shift.TimeIn} - {shift.TimeOut}";
+        }).ToList();
+    }
 
     void EditShift(EmployeeScheduleVM emp, string shift)
     {
-        // Open modal (later wired to service)
+        Console.WriteLine($"Editing {emp.Username} - {shift}");
     }
-
-
     class EmployeeScheduleVM
     {
-        public string Name { get; set; }
-        public List<string> WeeklyShifts { get; set; }
+        public int UserId { get; set; }
+        public string Username { get; set; }
+        public List<string> WeeklyShifts { get; set; } = new();
     }
+
 }

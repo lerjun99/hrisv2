@@ -21,7 +21,7 @@ namespace HRIS.Application.Features.TimeEntries.Handlers
 
         public async Task<Unit> Handle(StartBreakCommand request, CancellationToken ct)
         {
-            var entry = await _repo.GetOpenEntry(request.UserName);
+            var entry = await _repo.GetOpenEntry(request.UserName , request.UserId);
 
             if (request.Type == BreakType.Morning)
                 entry!.Break1In = PhilippineTime.Now;
@@ -36,7 +36,7 @@ namespace HRIS.Application.Features.TimeEntries.Handlers
 
         public async Task<Unit> Handle(EndBreakCommand request, CancellationToken ct)
         {
-            var entry = await _repo.GetOpenEntry(request.UserName);
+            var entry = await _repo.GetOpenEntry(request.UserName, request.UserId);
 
             if (request.Type == BreakType.Morning)
                 entry!.Break1Out = PhilippineTime.Now;

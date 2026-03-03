@@ -23,16 +23,16 @@ namespace HRIS_API.Controllers
             => Ok(await _mediator.Send(new ClockInCommand(UserId,userName)));
 
         [HttpPost("start-break")]
-        public async Task<IActionResult> StartBreak(string userName, BreakType type)
-            => Ok(await _mediator.Send(new StartBreakCommand(userName, type)));
+        public async Task<IActionResult> StartBreak(string userName, int UserId, BreakType type)
+            => Ok(await _mediator.Send(new StartBreakCommand(userName, UserId, type)));
 
         [HttpPost("end-break")]
-        public async Task<IActionResult> EndBreak(string userName, BreakType type)
-            => Ok(await _mediator.Send(new EndBreakCommand(userName, type)));
+        public async Task<IActionResult> EndBreak(string userName, int UserId, BreakType type)
+            => Ok(await _mediator.Send(new EndBreakCommand(userName, UserId, type)));
 
         [HttpPost("clock-out")]
-        public async Task<IActionResult> ClockOut(string userName)
-            => Ok(await _mediator.Send(new ClockOutCommand(userName)));
+        public async Task<IActionResult> ClockOut(string userName, int UserId)
+            => Ok(await _mediator.Send(new ClockOutCommand(userName,UserId)));
 
         [HttpGet("{userName}")]
         public async Task<IActionResult> GetLogs(string userName)

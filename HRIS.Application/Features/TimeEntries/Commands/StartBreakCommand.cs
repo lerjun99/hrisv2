@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace HRIS.Application.Features.TimeEntries.Commands
 {
-    public record StartBreakCommand(string UserName, BreakType Type) : IRequest<Unit>;
+    public record StartBreakCommand(string UserName, int UserId, BreakType Type) : IRequest<Unit>;
 }

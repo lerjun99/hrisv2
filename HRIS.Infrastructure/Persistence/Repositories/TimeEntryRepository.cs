@@ -16,7 +16,7 @@ namespace HRIS.Infrastructure.Persistence.Repositories
 
         public TimeEntryRepository(HrisDbContext db) => _db = db;
 
-        public Task<TimeEntry?> GetOpenEntry(string userName) =>
+        public Task<TimeEntry?> GetOpenEntry(string userName , int UserId) =>
             _db.TimeEntries
                .AsNoTracking()
                .FirstOrDefaultAsync(x => x.UserName == userName && x.ClockOut == null);

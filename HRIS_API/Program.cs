@@ -1,6 +1,7 @@
 ﻿using Emgu.CV.Face;
 using HRIS.Application.Common.Interfaces;
 using HRIS.Application.Features.FaceRecognition.Handlers;
+using HRIS.Application.Features.Schedule.Commands;
 using HRIS.Application.Features.TimeEntries.Queries;
 using HRIS.Infrastructure;
 using HRIS.Infrastructure.Persistence;
@@ -30,7 +31,8 @@ builder.Services.AddScoped<IFaceRecognitionService, OpenCvFaceRecognitionService
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
     typeof(IdentifyFaceHandler).Assembly,
-    typeof(GetActiveTimeEntryQuery).Assembly
+    typeof(GetActiveTimeEntryQuery).Assembly,
+    typeof(CreateWeeklyScheduleCommand).Assembly
 ));
 // ------------------- Controllers -------------------
 builder.Services.AddControllers();

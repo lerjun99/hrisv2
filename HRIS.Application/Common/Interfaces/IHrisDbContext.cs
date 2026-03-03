@@ -17,6 +17,9 @@ namespace HRIS.Application.Common.Interfaces
         DbSet<UploadedFile> UploadedFiles { get; }
         DbSet<ApiTokenModel> ApiTokenModels { get; }
         DbSet<TimeEntry> TimeEntries { get; set; }
+        DbSet<Employee> Employees { get; set; }
+        DbSet<Schedule> Schedules { get; set; }
+        DbSet<ShiftTemplate> ShiftTemplates { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
