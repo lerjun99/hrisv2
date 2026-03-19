@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 
 namespace HRIS.Application.Features.TimeEntries.Queries
 {
-    public record GetUserTimeEntriesQuery(string UserName)
+    public record GetUserTimeEntriesQuery(int UserId)
         : IRequest<List<TimeEntryDto>>;
 }

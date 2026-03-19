@@ -1,0 +1,43 @@
+﻿@inject HttpClient Http
+@inject IJSRuntime JS
+
+@using TimeTracker
+@using ScheduleDashboard
+@using AdminTimeTracker
+
+<h3>Checking condition...</h3>
+
+@if (UserType == 1)
+{
+    <DynamicComponent Type="@typeof(TimeTracker)"
+                      Parameters="@(new Dictionary<string, object>
+                      {
+                          ["UserName"] = UserName,
+                          ["UserId"] = UserId
+                      })" />
+}
+else if (UserType == 2)
+{
+    <DynamicComponent Type="@typeof(AdminTimeTracker)"
+                      Parameters="@(new Dictionary<string, object>
+                      {
+                          ["UserName"] = UserName,
+                          ["UserId"] = UserId
+                      })" />
+}
+else
+{
+    <div class="alert alert-danger">
+        Access denied.
+    </div>
+}
+
+@code {
+
+    [Parameter] public string UserName { get; set; }
+    [Parameter] public int UserId { get; set; }
+    [Parameter] public int UserType { get; set; }
+
+  
+
+}

@@ -34,9 +34,9 @@ namespace HRIS_API.Controllers
         public async Task<IActionResult> ClockOut(string userName, int UserId)
             => Ok(await _mediator.Send(new ClockOutCommand(userName,UserId)));
 
-        [HttpGet("{userName}")]
-        public async Task<IActionResult> GetLogs(string userName)
-            => Ok(await _mediator.Send(new GetUserTimeEntriesQuery(userName)));
+        [HttpGet("getLogs")]
+        public async Task<IActionResult> GetLogs(int UserId)
+            => Ok(await _mediator.Send(new GetUserTimeEntriesQuery(UserId)));
         [HttpGet("active/{userName}")]
         public async Task<IActionResult> GetActiveEntry(string userName)
         {

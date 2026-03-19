@@ -26,6 +26,7 @@
     {
         max-width:100%;
     }
+
 </style>
 <div class="container">
     <div class="row mb-3">
@@ -280,11 +281,10 @@
                                             @{
                                                 var status = CalculateStatus(entry);
                                             }
-                                <span class="fw-bold
+                                            <span class="fw-bold
                                             @(status == "Completed" ? "text-success" :
-                                                                                    status == "Late" ? "text-danger" :
-                                                                                    status == "Under Time" ? "text-warning" :
-                                                                                    "text-primary")">
+                                              status == "Late" ? "text-danger" :
+                                              status == "Under Time" ? "text-warning" : "text-primary")">
                                                 @status
                                             </span>
                                         </td>
@@ -311,8 +311,8 @@
  </div>
 
 @code {
-    [Parameter] public string UserName { get; set; } = "lerjun";
-    [Parameter] public int UserId { get; set; } = 1;
+    [Parameter] public string UserName { get; set; }
+    [Parameter] public int UserId { get; set; }
     private bool IsTableLoading = false;
     private List<TimeEntryDto> Entries = new();
     private TimeEntryDto CurrentEntry = new();
@@ -352,6 +352,8 @@
     protected override async Task OnInitializedAsync()
     {
         CurrentEntry.UserName = UserName;
+        // await JS.InvokeVoidAsync("alert", $"Username: {UserId}");
+
         await LoadShift();
         await LoadActiveEntry();
         await LoadEntries();
@@ -513,7 +515,7 @@
         try
         {
             IsTableLoading = true;
-            string url = $"{AppConfig.ChatUrl}api/time-entries/{UserName}";
+            string url = $"{AppConfig.ChatUrl}api/time-entries/getLogs?UserId={UserId}";
             //string url = "http://localhost:5196/api/time-entries/lerjun";
             var data = await Http.GetFromJsonAsync<List<TimeEntryDto>>(url);
             Entries = data ?? new List<TimeEntryDto>();

@@ -21,7 +21,7 @@ namespace HRIS.Application.Features.TimeEntries.Handlers
         public async Task<List<TimeEntryDto>> Handle(
             GetUserTimeEntriesQuery request, CancellationToken ct)
         {
-            return (await _repo.GetUserEntries(request.UserName))
+            return (await _repo.GetUserEntries(request.UserId))
                 .Select(e => new TimeEntryDto
                 {
                     Id = e.Id,

@@ -11,7 +11,7 @@ namespace HRIS.Application.Common.Interfaces
     public interface ITimeEntryRepository
     {
         Task<TimeEntry?> GetOpenEntry(string userName, int UserId);
-        Task<List<TimeEntry>> GetUserEntries(string userName);
+        Task<List<TimeEntry>> GetUserEntries(int UserId);
         Task Add(TimeEntry entry);
         Task Update(TimeEntry entry);
         Task<TimeEntry?> GetActiveEntryAsync(string userName);

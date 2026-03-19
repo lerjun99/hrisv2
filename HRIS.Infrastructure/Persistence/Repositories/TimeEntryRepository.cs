@@ -21,10 +21,10 @@ namespace HRIS.Infrastructure.Persistence.Repositories
                .AsNoTracking()
                .FirstOrDefaultAsync(x => x.UserName == userName && x.ClockOut == null);
 
-        public Task<List<TimeEntry>> GetUserEntries(string userName) =>
+        public Task<List<TimeEntry>> GetUserEntries(int UserId) =>
             _db.TimeEntries
                .AsNoTracking()
-               .Where(x => x.UserName == userName)
+               .Where(x => x.UserId == UserId)
                .OrderByDescending(x => x.ClockIn)
                .ToListAsync();
 

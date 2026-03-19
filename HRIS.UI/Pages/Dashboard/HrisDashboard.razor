@@ -1,5 +1,5 @@
 ﻿@page "/hrisdashboard"
-@using TimeTracker
+@using RedirectHandler
 @using ScheduleDashboard
 <div class="mt-4 mb-5">
 
@@ -54,7 +54,7 @@
 {
     <div class="card-body p-4 p-md-5">
 
-                <DynamicComponent Type="@typeof(TimeTracker)"
+                <DynamicComponent Type="@typeof(RedirectHandler)"
                                   Parameters="@(new Dictionary<string, object>
                                   {
                                       ["UserName"] = CurrentUserInitials
